@@ -4,6 +4,7 @@ import Header from './components/Header';
 import FileSelector from './components/FileSelector';
 import SuMoTypeSelector from './components/SuMoTypeSelector';
 import OutputResponseSelector from './components/OutputResponseSelector';
+import MetaModelingUX from './components/MetaModelingUX';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <FileSelector defaultFileName="./README.md" />
       <SuMoTypeSelector />
       <OutputResponseSelector />
+      <MetaModelingUX />
       {/* The default value doesnt seem to be working... The variable 
       is well set but the "fileselector" object is not really picking it up.
       Well don't go crazy, I will be using Z43 UI library.

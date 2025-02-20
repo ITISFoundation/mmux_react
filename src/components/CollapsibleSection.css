@@ -1,0 +1,14 @@
+/* Collapsible section styling */
+.collapsible-card {
+    text-align: left;
+    margin-bottom: 8px;
+    background-color: #1E1E1E;
+    border-radius: 4px;
+}
+
+.collapsible-button {
+    color: white !important;
+    text-align: left;
+    justify-content: flex-start;
+    font-size: 16px;
+}
