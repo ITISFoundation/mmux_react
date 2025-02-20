@@ -9,11 +9,13 @@ import MetaModelingUX from './components/MetaModelingUX';
 function App() {
   return (
     <div className="App">
-      <Header customText="SuMo building & validation" />
-      <FileSelector defaultFileName="./README.md" />
-      <SuMoTypeSelector />
-      <OutputResponseSelector />
-      <MetaModelingUX />
+      <MetaModelingUX tabTitle="Uncertainty Quantification" headerType="application-header">
+        {/* <Header customText="SuMo building & validation" />*/}
+        <FileSelector defaultFileName="./README.md" />
+        <SuMoTypeSelector />
+        <OutputResponseSelector />
+        blabla
+      </MetaModelingUX >
       {/* The default value doesnt seem to be working... The variable 
       is well set but the "fileselector" object is not really picking it up.
       Well don't go crazy, I will be using Z43 UI library.
