@@ -10,17 +10,8 @@ export default function FileSelector(props) {
         }
     }
 
-    // function setFileDefault(props) {
-    //     if (props.defaultFileName) {
-    //         setFileName(props.defaultFileName)
-    //     }
-
-    // }
-
-    // setFileDefault(props.defaultFileName)  // not working
     return (
         < div >
-
             <input type="file" onChange={handleFileChange} />
         </div >
     );

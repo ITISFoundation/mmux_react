@@ -1,19 +1,17 @@
-import { useState } from "react";
-import { Card, CardContent, Typography, Button, Collapse } from "@mui/material";
-import { ExpandMore, ExpandLess } from "@mui/icons-material";
+import { Card } from "@mui/material";
 import "./MetaModelingUX.css";
-import CollapsibleSection from "./CollapsibleSection";
+import Header from "./Header";
 
 
 export default function MetaModelingUX(props) {
     return (
         <Card className="background-card">
-            <Card className={props.headerType}>
-                <Typography variant="h5" color="white" component="div">
-                    MetaModelingUX  -  {props.tabTitle}
-                </Typography>
-            </Card>
+            <Header tabTitle={props.tabTitle} headerType={props.headerType} />
+            {/* <Header props={props} /> */}
+            {/* <Header props=props /> */}
+            {/* <Header {props} /> */}
             {props.children}
+            {/* TODO osparc logo on bottom left; access to runner status wheel on bottom right */}
         </Card>
     );
 }
