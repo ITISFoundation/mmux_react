@@ -10,12 +10,10 @@ export default function SuMoTypeSelector() {
 
     return (
         <div>
-            <p>SuMo type:
-                <button onClick={toggleOption}>
-                    Switch
-                </button>
-                {options[selected]}
-            </p>
+            <button onClick={toggleOption}>
+                SuMo type
+            </button>
+            {" : " + options[selected]}
         </div>
     );
 }

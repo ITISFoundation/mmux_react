@@ -1,2 +1,2 @@
-FLASK_APP=example.py
-FLASK_ENV=development
+FLASK_APP=mmux_python/flask_workflows.py
+FLASK_DEBUG=1
