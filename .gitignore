@@ -6,8 +6,9 @@
 .pnp.js
 
 # flask
-venv
+.venv
 __pycache__
+.log
 
 # testing
 /coverage
