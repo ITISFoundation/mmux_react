@@ -1,11 +1,11 @@
 /* Background card styling */
 .background-card {
     min-height: 20vh;
-    /* background-color: black !important; */
-    border: 5px solid purple;
-    /* padding: 10px; */
-    /* display: flex; */
-    /* justify-content: left;
-    align-items: top; */
+    max-width: 1500px;
+    background-color: #222222 !important;
+    border: 15px solid purple;
+
+    padding: 10px;
+    align-items: top; 
     text-align: left;
 }

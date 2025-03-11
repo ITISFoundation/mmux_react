@@ -75,19 +75,27 @@ export default function UQ() {
         // Copy the structure from SuMo building; refactor the PY script as a Flask callback. 
         // Fixed Means & Stds (inside Python), will make that customizable later on.
         <MetaModelingUX tabTitle="Uncertainty Quantification" headerType="application-header">
-            <input type="file" onChange={fetchColumnNames} /> {/* This includes fetching variable names */}
-
-            <SuMoTypeSelector /> {/* TODO get which type of SuMo from here*/}
+            {/* 
+            <input type="file" onChange={fetchColumnNames} />
+            <SuMoTypeSelector />
             <OutputResponseSelector
                 responses={outputVars}
                 selectedResponse={selectedResponse}
                 setSelectedResponse={setSelectedResponse}
                 isLogEnabled={isLogEnabled}
                 setIsLogEnabled={setIsLogEnabled}
-            />
+            /> 
+            */}
+            <div> 
+            Do w FunctionsAPI - fetch the SuMo already registered
+            </div> 
             {/* TODO input distributions (see how I do it to generate Dakota file)
             either give option to user or also populate with defaults */}
-            <Button onClick={runUQ} style={{ backgroundColor: 'purple', color: 'white' }}>
+            <Button 
+                disabled
+                onClick={runUQ}
+                style={{ backgroundColor: 'purple', color: 'grey', height:"40px"}}
+            >
                 <h5> Run</h5>
             </Button>
             <PlotImageIfExists image={UQHist} height={300} width={400} />
