@@ -33,8 +33,9 @@ function App() {
 
       {/* Shows additional elements within the page (oSPARC logo, etc) 
       TODO osparc logo on bottom left; access to runner status wheel on bottom right */}
-      <div className='AppLogo'>
-        oSPARC logo
+      <div>
+
+        <img src='osparc-logo.png' height={25}></img>
       </div>
 
     </div>
