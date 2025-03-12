@@ -87,7 +87,7 @@ function SuMoBuildingValidation() {
                 setIsLogEnabled={setIsLogEnabled}
             />
 
-            <Button onClick={runSuMo} style={{ backgroundColor: 'purple', color: 'white' }}>
+            <Button onClick={runSuMo} sx={{ backgroundColor: 'purple', color: 'white' }}>
                 <h5> Run</h5>
             </Button>
 

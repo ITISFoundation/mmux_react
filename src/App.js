@@ -3,9 +3,6 @@ import UQ from './UQ';
 import SuMoBuildingValidation from './SuMoBuilding';
 import Navigation from './components/Navigation';
 import { useState } from 'react';
-import { createTheme } from '@mui/material';
-import { deepOrange, deepPurple } from '@mui/material/colors';
-import { ThemeProvider } from '@emotion/react';
 
 function App() {
   const steps = [
@@ -14,33 +11,8 @@ function App() {
     { id: 3, label: "UQ" }
   ];
   const [activeStep, setActiveStep] = useState(steps[0].id)
-
-  const theme = createTheme({
-    palette: {primary: deepPurple},
-    components: {
-      MuiButton: {
-        defaultProps: {
-          // disableRipple: true,
-          // disableElevation: true,
-          },
-        styleOverrides:{
-          root:{
-            borderRadius: "35px",
-          }
-        }
-      }
-    },
-    styleOverrides: {
-      root: {
-        width: "100%"
-      }
-    }
-
-
-
-  })
+   
   return (
-    <ThemeProvider theme={theme}>
     <div className="background-card">
       {/* Top, it shows the different "tabs" as if it were AppMode */}
       <div className='navigation'>
@@ -66,7 +38,6 @@ function App() {
       </div>
 
     </div>
-    </ThemeProvider>
   );
 }
 

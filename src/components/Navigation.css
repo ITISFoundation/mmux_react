@@ -6,26 +6,3 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
-.active-tab-element {
-    background-color: #392061; /* Green background */
-    color: white; /* White text */
-    padding: 10px 20px; /* Padding */
-    border-radius: 5px; /* Rounded corners */
-    font-weight: normal; /* Bold text */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.non-active-tab-element {
-    background-color: #f1f1f1; /* Light grey background */
-    color: #333; /* Dark grey text */
-    padding: 10px 20px; /* Padding */
-    border-radius: 5px; /* Rounded corners */
-    font-weight: normal; /* Normal text */
-    box-shadow: none; /* No shadow */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-.non-active-tab-element:hover {
-    background-color: #ddd; /* Slightly darker grey on hover */
-}
