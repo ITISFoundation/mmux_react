@@ -7,19 +7,40 @@ export function setupTheme() {
         // shape: { borderRadius: 10 }
         components: {
             MuiButton: {
-                defaultProps: {
-                    disableRipple: true,
-                    disableElevation: true,
-                },
                 styleOverrides: {
                     root: {
-                        backgroundColor: 'white', // Use the light version of the palette
+                        variants: [{
+                            props: {
+                                variant: "contained",
+                            },
+                            style: {
+                                // backgroundColor works but disableElevation doesnt...
+                                // disableElevation: true,
+                                // disableRipple: true,
+                                // backgroundColor : "red",
+                                // boxShadow: "200px",
+                                
+                            }
+                        }
+                        ],
                         '&:hover': {
                             backgroundColor: deepPurple[300], // Slightly darker on hover
                         },
                     },
                 },
             },
+            MuiCard: {
+                styleOverrides: {
+                    root: {
+                        variants: [
+                            {
+                                props: {variant: "plain"},
+                                style: {}
+                            }
+                        ]
+                    }
+                }
+            }
         },
     });
 }

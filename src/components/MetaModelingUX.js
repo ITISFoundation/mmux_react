@@ -5,12 +5,9 @@ import Header from "./Header";
 
 export default function MetaModelingUX(props) {
     return (
-        <Card>
+        <Card variant="plain" className="MMUX-tab">
             <Header tabTitle={props.tabTitle} headerType={props.headerType} />
-            {/* <Header props={props} /> */}
-            {/* <Header props=props /> */}
-            {/* <Header {props} /> */}
-            {props.children}
+            <Card variant="plain" sx={{margin:"15px"} } raised={false} children={props.children}/>
         </Card>
     );
 }

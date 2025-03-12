@@ -11,7 +11,7 @@ const theme = setupTheme();
 
 root.render(
 <ThemeProvider theme={theme}>
-<React.StrictMode>
+  <React.StrictMode>
     <App />
   </React.StrictMode>
   </ThemeProvider>
