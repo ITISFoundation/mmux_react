@@ -18,3 +18,11 @@ start-backend:
 
 start-frontend:
 	npm start
+
+functions-api-client: ## requires serving from FunctionsAPI already active
+	curl http://localhost:8000/generate-openapi
+	npm install @openapitools/openapi-generator-cli -g
+	openapi-generator-cli generate \
+		-i openapi.json \
+		-g javascript \
+		-o ./functions-api-react-client
