@@ -3,6 +3,13 @@ VENV_DIR := $(FLASKAPI_DIR)/.venv
 MMUX_PYTHON_DIR := $(FLASKAPI_DIR)/mmux_python
 MMUX_PYTHON_BRANCH := "work/jgo/flask_mmux_nih"
 
+base-install:
+	sudo apt-get npm
+	## install nvm (node version manager)
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+	nvm install 22 ## gets node v22 (latest)
+
 install:
 	npm install react react-start react-scripts web-vitals superagent
 	npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
