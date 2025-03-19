@@ -4,6 +4,7 @@ MMUX_PYTHON_DIR := $(FLASKAPI_DIR)/mmux_python
 MMUX_PYTHON_BRANCH := "work/jgo/flask_mmux_nih"
 
 install:
+	npm install react react-start react-scripts web-vitals superagent
 	npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 
 install-mmux-python:
@@ -20,9 +21,9 @@ start-frontend:
 	npm start
 
 functions-api-client: ## requires serving from FunctionsAPI already active
-	curl http://localhost:8000/generate-openapi
+	curl http://localhost:8000/generate-openapi -o openapi.json
 	npm install @openapitools/openapi-generator-cli -g
 	openapi-generator-cli generate \
 		-i openapi.json \
 		-g javascript \
-		-o ./functions-api-react-client
+		-o ./src/functions-api-react-client
