@@ -4,8 +4,8 @@ import { Card, Typography, Table, TableRow, TableCell, TableBody, TableHead, Pap
 // Assuming your folder structure is: project-root/components/your-file.js
 // If it's not directly under components/, you can adjust this path accordingly.
 // import { ApiClient } from "../functions-api-react-client"; // the "index" in this module is not found -- do I need to npm install it?
-import ApiClient from "../functions-api-react-client/src/ApiClient.js";
-import FunctionApi from "../functions-api-react-client/src/api/FunctionApi.js";
+import ApiClient from "../functions-api-js-client/src/ApiClient.js";
+import FunctionApi from "../functions-api-js-client/src/api/FunctionApi.js";
 // import FunctionJobApi from "../functions-api-react-client/src/api/FunctionJobApi.js";
 // Attempted import error: './ValidationErrorLocInner' does not contain a default export (imported as 'ValidationErrorLocInner').
 // ERROR in ./src/functions-api-react-client/src/model/ValidationError.js 58:59-82
@@ -18,10 +18,9 @@ function FunctionIndex(props) {
     ]);
 
     function handleFunctionClick(function_id) {
-        console.log("Function clicked:", function_id)
+        console.log("Function clicked:", function_id);
         const t = new FunctionApi();
         console.log("FunctionApi:", t)
-        console.log("Response: ", t.listFunctions())
         // TODO check how API calls (to Flask) were working, and the syntax in general
         // t.listFunctions()
         //     .then(response => {
@@ -43,6 +42,7 @@ function FunctionIndex(props) {
             }
         );
     }
+
     function showList(list) {
         // return [list.map(input => `'${input}'`).join(', ')]
         return [list.join(', ')]
