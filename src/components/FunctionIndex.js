@@ -21,22 +21,11 @@ function FunctionIndex(props) {
         console.log("Function clicked:", function_id);
         const t = new FunctionApi();
         console.log("FunctionApi:", t)
-        // TODO check how API calls (to Flask) were working, and the syntax in general
-        // t.listFunctions()
-        //     .then(response => {
-        //         if (!response.ok) {
-        //             throw new Error('Network response was not ok');
-        //         }
-        //         return response.json();
-        //     })
-        //     .then(console.log) // just logging
-        //     .catch(error => console.error('Error:', error));
         t.listFunctions(
             (error, response, body) => {
                 if (error || response.statusCode !== 200) {
                     return { type: 'error', message: error.message };
                 }
-
                 console.log(response);
                 console.log(body);
             }
