@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ValidationErrorLocInner from './ValidationErrorLocInner';
+// import ValidationErrorLocInner from './ValidationErrorLocInner';
 
 /**
  * The ValidationError model module.
@@ -27,8 +27,8 @@ class ValidationError {
      * @param msg {String} 
      * @param type {String} 
      */
-    constructor(loc, msg, type) { 
-        
+    constructor(loc, msg, type) {
+
         ValidationError.initialize(this, loc, msg, type);
     }
 
@@ -37,7 +37,7 @@ class ValidationError {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, loc, msg, type) { 
+    static initialize(obj, loc, msg, type) {
         obj['loc'] = loc;
         obj['msg'] = msg;
         obj['type'] = type;
@@ -54,9 +54,9 @@ class ValidationError {
         if (data) {
             obj = obj || new ValidationError();
 
-            if (data.hasOwnProperty('loc')) {
-                obj['loc'] = ApiClient.convertToType(data['loc'], [ValidationErrorLocInner]);
-            }
+            // if (data.hasOwnProperty('loc')) {
+            //     obj['loc'] = ApiClient.convertToType(data['loc'], [ValidationErrorLocInner]);
+            // }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
             }
@@ -84,10 +84,10 @@ class ValidationError {
             if (!Array.isArray(data['loc'])) {
                 throw new Error("Expected the field `loc` to be an array in the JSON data but got " + data['loc']);
             }
-            // validate the optional field `loc` (array)
-            for (const item of data['loc']) {
-                ValidationErrorLocInner.validateJSON(item);
-            };
+            // // validate the optional field `loc` (array)
+            // for (const item of data['loc']) {
+            //     ValidationErrorLocInner.validateJSON(item);
+            // };
         }
         // ensure the json data is a string
         if (data['msg'] && !(typeof data['msg'] === 'string' || data['msg'] instanceof String)) {
@@ -107,7 +107,7 @@ class ValidationError {
 ValidationError.RequiredProperties = ["loc", "msg", "type"];
 
 /**
- * @member {Array.<module:model/ValidationErrorLocInner>} loc
+//  * @member {Array.<module:model/ValidationErrorLocInner>} loc
  */
 ValidationError.prototype['loc'] = undefined;
 
