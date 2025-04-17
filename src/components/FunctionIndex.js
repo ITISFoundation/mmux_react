@@ -6,6 +6,7 @@ import { Card, Typography, Table, TableRow, TableCell, TableBody, TableHead, Pap
 // import { ApiClient } from "../functions-api-react-client"; // the "index" in this module is not found -- do I need to npm install it?
 import ApiClient from "../functions-api-js-client/src/ApiClient.js";
 import FunctionApi from "../functions-api-js-client/src/api/FunctionApi.js";
+import { Api } from '@mui/icons-material';
 // import FunctionJobApi from "../functions-api-react-client/src/api/FunctionJobApi.js";
 // Attempted import error: './ValidationErrorLocInner' does not contain a default export (imported as 'ValidationErrorLocInner').
 // ERROR in ./src/functions-api-react-client/src/model/ValidationError.js 58:59-82
@@ -13,27 +14,40 @@ import FunctionApi from "../functions-api-js-client/src/api/FunctionApi.js";
 
 
 function FunctionIndex(props) {
-    const [functions, setFunctions] = useState([
-        { id: 1, name: "Example Function 1", inputs: ["a", "b", "c"], outputs: ["d", "e"] },
-    ]);
+    const [functions, setFunctions] = useState(
+        [
+        { id: 1, name: "Example Function 1", input_schema: ["a", "b", "c"], output_schema: ["d", "e"] },
+        ]
+    );
 
-    function handleFunctionClick(function_id) {
-        console.log("Function clicked:", function_id);
-        const t = new FunctionApi();
-        console.log("FunctionApi:", t)
+
+    function refreshFunctionList() {
+        const c = new ApiClient('http://127.0.0.1:8087')
+        const t = new FunctionApi(c);
         t.listFunctions(
             (error, response, body) => {
-                if (error || response.statusCode !== 200) {
+                console.debug("error: ", error)
+                console.debug("response: ", response);
+                console.debug("body: ", body);
+                if (body.statusCode !== 200) {
                     return { type: 'error', message: error.message };
                 }
-                console.log(response);
-                console.log(body);
+                setFunctions( response)
             }
-        );
+        )
     }
 
     function showList(list) {
         // return [list.map(input => `'${input}'`).join(', ')]
+        if (list === null) {
+            console.log("No input/output schema")
+            return [""]
+
+
+
+            
+        }
+
         return [list.join(', ')]
     }
 
@@ -42,6 +56,7 @@ function FunctionIndex(props) {
             <Typography variant="h4" textAlign={"center"} >
                 Function Index
             </Typography>
+            <Button onClick={() => refreshFunctionList()}>Refresh Function List</Button>
             <Table component={Paper}>
                 <TableHead>
                     <TableRow>
@@ -57,8 +72,8 @@ function FunctionIndex(props) {
                         <TableRow key={item.id}>
                             <TableCell>{item.id}</TableCell>
                             <TableCell>{item.name}</TableCell>
-                            <TableCell>{showList(item.inputs)}  </TableCell>
-                            <TableCell>{showList(item.outputs)}</TableCell>
+                            <TableCell>{showList(item.input_schema)}  </TableCell>
+                            <TableCell>{showList(item.output_schema)}</TableCell>
                             <TableCell align='right'>{<Button variant="contained" onClick={() => handleFunctionClick(item.id)}>Select</Button>}</TableCell>
                         </TableRow>
                     ))}

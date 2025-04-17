@@ -46,41 +46,41 @@ function App() {
   }
 
   return (
-    // <ArrowsWrapper>
-    //   <div className="background-card">
-    //     {/* Top, it shows the different "tabs" as if it were AppMode */}
-    //     <div className='navigation'>
-    //       <Navigation steps={steps} activeStep={activeStep} setActiveStep={setActiveStep} />
-    //     </div>
+    <ArrowsWrapper>
+      <div className="background-card">
+        {/* Top, it shows the different "tabs" as if it were AppMode */}
+        <div className='navigation'>
+          <Navigation steps={steps} activeStep={activeStep} setActiveStep={setActiveStep} />
+        </div>
 
-    //     {/* Shows the active tab. The page is not reloaded - this way, state is kept. 
-    //     TODO save state of components to JSON to preserve across runs.*/}
-    //     <div className={activeStep === 1 ? "active": "non-active"}>
-    //       <Setup setActiveStep={setActiveStep} />
-    //     </div>
-    //     <div className={activeStep === 2 ? "active": "non-active"}>
-    //       <SuMoBuildingValidation />
-    //     </div>
-    //     <div className={activeStep === 3 ? "active": "non-active"}>
-    //       <UQ />
-    //     </div>
+        {/* Shows the active tab. The page is not reloaded - this way, state is kept. 
+        TODO save state of components to JSON to preserve across runs.*/}
+        <div className={activeStep === 1 ? "active": "non-active"}>
+          <Setup setActiveStep={setActiveStep} />
+        </div>
+        <div className={activeStep === 2 ? "active": "non-active"}>
+          <SuMoBuildingValidation />
+        </div>
+        <div className={activeStep === 3 ? "active": "non-active"}>
+          <UQ />
+        </div>
 
-    //     {/* Function Index and Job Index */}
-    //     <div className={activeStep === 98 ? "active": "non-active"}>
-    //       <FunctionIndex />
-    //     </div>
-    //     <div className={activeStep === 99 ? "active": "non-active"}>
-    //       <JobIndex />
-    //     </div>
+        {/* Function Index and Job Index */}
+        <div className={activeStep === 98 ? "active": "non-active"}>
+          <FunctionIndex />
+        </div>
+        <div className={activeStep === 99 ? "active": "non-active"}>
+          <JobIndex />
+        </div>
 
-    //     {/* osparc logo on bottom left; access to runner status wheel on bottom right */}
-    //     <div style={{ display: 'flex', justifyContent: "space-between", marginLeft:"5px", marginRight: "5px",  marginBottom:"3px", marginTop:"10px"}}>
-    //       <img src='osparc-logo.png' height={25} />
-    //       <img src="osparc-loading-symbol.png" height={25} alt="Jobs" onClick={()=>setActiveStep(99)}/>
-    //     </div>
-    //   </div>
-    // </ArrowsWrapper>
-    <FunctionIndex />
+        {/* osparc logo on bottom left; access to runner status wheel on bottom right */}
+        <div style={{ display: 'flex', justifyContent: "space-between", marginLeft:"5px", marginRight: "5px",  marginBottom:"3px", marginTop:"10px"}}>
+          <img src='osparc-logo.png' height={25} />
+          <img src="osparc-loading-symbol.png" height={25} alt="Jobs" onClick={()=>setActiveStep(99)}/>
+        </div>
+      </div>
+    </ArrowsWrapper>
+    // <FunctionIndex />
 
   );
 }
